@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  to-do-list:
+    image: artembrahar/to-do-list:latest
+    container_name: to-do-list
+    restart: always
+    ports:
+      - "8080:8080"
+
+  watchtower:
+    image: containrrr/watchtower
+    container_name: watchtower
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - WATCHTOWER_POLL_INTERVAL=30
