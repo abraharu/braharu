@@ -4,4 +4,4 @@ COPY target/*.war app.war
 
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "/app.jar"]
+ENTRYPOINT ["java", "-war", "/app.war"]
