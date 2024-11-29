@@ -1,7 +1,5 @@
-FROM eclipse-temurin:21-jre
+FROM tomcat:10.1-jdk21
+
+WORKDIR /usr/local/tomcat/webapps/
 
 COPY target/*.war app.war
-
-EXPOSE 8080
-
-ENTRYPOINT ["java", "-war", "/app.war"]
